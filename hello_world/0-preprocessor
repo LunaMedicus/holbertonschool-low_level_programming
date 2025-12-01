@@ -1,7 +1,3 @@
 #!/bin/bash
-# Enable the exit on error and error tracing
-set -E
-# Preprocess the C source file
 gcc -E $CFILE -o main.c
-# Display the preprocessed output
-cat main.c
+
