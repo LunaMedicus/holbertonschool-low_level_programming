@@ -18,7 +18,7 @@ Use a Makefile (when present):
 make
 ```
 
-## Usage
+## Usages
 Run compiled programs:
 ```bash
 ./program [args]

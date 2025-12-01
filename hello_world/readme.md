@@ -13,7 +13,7 @@ Simple Holberton project that prints "Hello, World" to stdout. Intended as an in
 
 (Adjust filenames to match your repository.)
 
-## Build
+## Builds
 Compile with sensible warnings enabled:
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -o hello hello_world.c
