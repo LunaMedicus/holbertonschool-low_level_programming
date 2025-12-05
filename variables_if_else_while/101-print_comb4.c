@@ -5,17 +5,23 @@
 */
 int main(void)
 {
-	int n;
+	int a, b, c;
 
-	for (n = 0; n <= 7; n++)
+	for (a = 0; a <= 7; a++)
 	{
-		putchar(n + '0');
-		putchar(n + 1 + '0');
-		putchar(n + 2 + '0');
-		if (n != 7)
+		for (b = a + 1; b <= 8; b++)
 		{
-			putchar(',');
-			putchar(' ');
+			for (c = b + 1; c <= 9; c++)
+			{
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(c + '0');
+				if (a != 7 || b != 8 || c != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
 	}
 	putchar('\n');
