@@ -5,26 +5,21 @@
 */
 int main(void)
 {
-	int i, j, k, l;
+	int a, b;
 
-	for (i = 0; i <= 9; i++)
+	for (a = 0; a <= 98; a++)
 	{
-		for (j = i + 1; j <= 9; j++)
+		for (b = a + 1; b <= 99; b++)
 		{
-			for (k = j + 1; k <= 9; k++)
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
+			putchar(' ');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
+			if (a != 98 || b != 99)
 			{
-				for (l = k + 1; l <= 9; l++)
-				{
-					putchar(i + '0');
-					putchar(j + '0');
-					putchar(k + '0');
-					putchar(l + '0');
-					if (i != 6 || j != 7 || k != 8 || l != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
