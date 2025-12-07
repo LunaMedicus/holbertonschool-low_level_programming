@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_most_numbers - print all number from 0 to 9 expext 2 and 4.
  *
