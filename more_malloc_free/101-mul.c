@@ -45,20 +45,6 @@ int _strlen(char *s)
 }
 
 /**
- * print_error - prints Error and exits with status 98
- */
-void print_error(void)
-{
-	_putchar('E');
-	_putchar('r');
-	_putchar('r');
-	_putchar('o');
-	_putchar('r');
-	_putchar('\n');
-	exit(98);
-}
-
-/**
  * multiply - performs multiplication of two number strings
  * @num1: first number string
  * @num2: second number string
@@ -86,27 +72,6 @@ void multiply(char *num1, char *num2, int *result, int len1, int len2)
 }
 
 /**
- * print_result - prints the result array
- * @result: array containing result digits
- * @len: length of result array
- */
-void print_result(int *result, int len)
-{
-	int i = 0;
-
-	while (i < len && result[i] == 0)
-		i++;
-	if (i == len)
-		_putchar('0');
-	while (i < len)
-	{
-		_putchar(result[i] + '0');
-		i++;
-	}
-	_putchar('\n');
-}
-
-/**
  * main - multiplies two positive numbers
  * @argc: argument count
  * @argv: argument vector
@@ -118,12 +83,18 @@ int main(int argc, char *argv[])
 	int len1, len2, len, i;
 	int *result;
 
-	if (argc != 3)
-		print_error();
+	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
+	{
+		_putchar('E');
+		_putchar('r');
+		_putchar('r');
+		_putchar('o');
+		_putchar('r');
+		_putchar('\n');
+		exit(98);
+	}
 	num1 = argv[1];
 	num2 = argv[2];
-	if (!is_digit(num1) || !is_digit(num2))
-		print_error();
 	len1 = _strlen(num1);
 	len2 = _strlen(num2);
 	len = len1 + len2;
@@ -135,13 +106,13 @@ int main(int argc, char *argv[])
 	while (i < len && result[i] == 0)
 		i++;
 	if (i == len)
-		printf("0");
+		_putchar('0');
 	while (i < len)
 	{
-		printf("%d", result[i]);
+		_putchar(result[i] + '0');
 		i++;
 	}
-	printf("\n");
+	_putchar('\n');
 	free(result);
 	return (0);
 }
