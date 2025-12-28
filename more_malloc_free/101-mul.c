@@ -1,5 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1, on error -1
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
 /**
  * is_digit - checks if a string contains only digits
@@ -38,7 +49,12 @@ int _strlen(char *s)
  */
 void print_error(void)
 {
-	printf("Error\n");
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	_putchar('\n');
 	exit(98);
 }
 
@@ -67,6 +83,27 @@ void multiply(char *num1, char *num2, int *result, int len1, int len2)
 		}
 		result[i + j + 1] += carry;
 	}
+}
+
+/**
+ * print_result - prints the result array
+ * @result: array containing result digits
+ * @len: length of result array
+ */
+void print_result(int *result, int len)
+{
+	int i = 0;
+
+	while (i < len && result[i] == 0)
+		i++;
+	if (i == len)
+		_putchar('0');
+	while (i < len)
+	{
+		_putchar(result[i] + '0');
+		i++;
+	}
+	_putchar('\n');
 }
 
 /**
