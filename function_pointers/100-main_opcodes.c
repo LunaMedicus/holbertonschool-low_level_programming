@@ -25,11 +25,13 @@ int main(int argc, char *argv[])
 	}
 	p = (unsigned char *)main;
 	i = 0;
-	if (x > 0)
+	while (i < x)
 	{
-		while (i < (x - 1))
-			printf("%02hhx ", p[i++]);
-		printf("%hhx\n", p[i]);
+		printf("%02x", p[i]);
+		if (i < x - 1)
+			printf(" ");
+		i++;
 	}
+	printf("\n");
 	return (0);
 }
