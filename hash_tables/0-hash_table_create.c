@@ -1,11 +1,11 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - Create a Hash Table
- * @size: The size of the hash  table
- * Descreption : Alloctaing a Hash Table using Given Size
- * Return: NULL Error Occurred Or A Hash Table
- */
+* hash_table_create - Create a Hash Table
+* @size: The size of the hash  table
+* Descreption : Alloctaing a Hash Table using Given Size
+* Return: NULL Error Occurred Or A Hash Table
+*/
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hash_table;
@@ -18,4 +18,17 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hash_table->array == NULL)
 		return (NULL);
 	return (hash_table);
+}
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ * @argc: argument count
+ * @argv: argument vector
+ */
+int main(int argc, char const *argv[])
+{
+	hash_table_create(50);
+	printf("%lu\n", hash_table_create(50)->size);
+	return (0);
 }
